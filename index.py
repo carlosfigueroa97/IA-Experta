@@ -16,66 +16,77 @@ class DivinerRobot(KnowledgeEngine):
 
     @Rule(Fruits(color='verde',dura=2,suave=1,dulce=2,acido=1,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def kiwi(self):
+        global bandera
         print("Es el kiwi")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='verde',dura=1,suave=2,dulce=2,acido=1,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def manzana_verde(self):
+        global bandera
         print("Es la manzana")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='rojo',dura=2,suave=1,dulce=1,acido=2,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def fresa(self):
+        global bandera
         print("Es la fresa")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='rojo',dura=1,suave=2,dulce=1,acido=2,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def manzana_roja(self):
+        global bandera
         print("Es la manzana")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='rojo',dura=2,suave=1,dulce=2,acido=1,semilla=1,hueso=2,ss_nh=2,agradable=2,desagradable=1))
     def zarzamora(self):
+        global bandera
         print("Es la zarzamora")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='amarillo',dura=1,suave=2,dulce=2,acido=1,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def manzana_amarilla(self):
+        global bandera
         print("Es la manzana")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='amarillo',dura=2,suave=1,dulce=1,acido=2,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def platano(self):
+        global bandera
         print("Es el platano")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='amarillo',dura=1,suave=2,dulce=1,acido=2,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def melon(self):
+        global bandera
         print("Es el melon")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='naranja',dura=2,suave=1,dulce=1,acido=2,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def naranja(self):
+        global bandera
         print("Es la naranja")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='naranja',dura=2,suave=1,dulce=1,acido=2,semilla=2,hueso=1,ss_nh=2,agradable=1,desagradable=2))
     def mango(self):
+        global bandera
         print("Es la mango")
         bandera = True
         self.set_bandera(bandera)
 
     @Rule(Fruits(color='naranja',dura=2,suave=1,dulce=1,acido=2,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def papaya(self):
+        global bandera
         print("Es la papaya")
         bandera = True
         self.set_bandera(bandera)
@@ -96,21 +107,21 @@ def preguntas():
     if(color2 in array_colores):
         dura = int(input("¿Tiene la piel dura? (1=si 2=no) "))
         if(dura == 2):
-            suave = int(input("¿Tiene la piel suave? (1=si 2=no)"))
-        dulce = int(input("¿Es dulce? (1=si 2=no)"))
+            suave = int(input("¿Tiene la piel suave? (1=si 2=no) "))
+        dulce = int(input("¿Es dulce? (1=si 2=no) "))
         if(dulce == 2):
-            acido = int(input("¿Es acido? (1=si 2=no)"))
-        semilla = int(input("¿Tiene semilla? (1=si 2=no)"))
+            acido = int(input("¿Es acido? (1=si 2=no) "))
+        semilla = int(input("¿Tiene semilla? (1=si 2=no) "))
         if(semilla == 2):
-            hueso = int(input("¿Tiene hueso? (1=si 2=no)"))
+            hueso = int(input("¿Tiene hueso? (1=si 2=no) "))
             if(hueso == 2):
-                ss_nh = int(input("¿Sin semilla ni hueso? (1=si 2=no)"))
+                ss_nh = int(input("¿Sin semilla ni hueso? (1=si 2=no) "))
         if(ss_nh == 2 or ss_nh == "" or ss_nh == None):
             print("No seas TROLL!")
         else:
-            agradable = int(input("Aroma agradable? (1=si 2=no)"))
+            agradable = int(input("Aroma agradable? (1=si 2=no) "))
             if(agradable == 2):
-                desagradable = int(input("Aroma desagradable? (1=si 2=no)"))
+                desagradable = int(input("Aroma desagradable? (1=si 2=no) "))
         return (color, dura, suave, dulce, acido, semilla, hueso, ss_nh, agradable, desagradable)
     else:
         return False
@@ -123,7 +134,7 @@ def main():
         else:
             engine = DivinerRobot()
             engine.reset()
-            engine.declare(Fruits(color=response[0].lower(),dura=response[1],suave=response[2],dulce=response[3],acido=response[4],semilla=response[5],hueso=response[6],ss_nh=response[7],agradable=response[8],desagradable=response[9]))
+            engine.declare(Fruits(color=response[0].lower(),dbandera = Noneura=response[1],suave=response[2],dulce=response[3],acido=response[4],semilla=response[5],hueso=response[6],ss_nh=response[7],agradable=response[8],desagradable=response[9]))
             engine.run()
             ban = DivinerRobot().get_bandera()
             if(ban == False):
