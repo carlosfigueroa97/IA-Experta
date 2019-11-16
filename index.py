@@ -12,68 +12,33 @@ class Fruits(Fact):
     pass
 
 class DivinerRobot(KnowledgeEngine):
-    @Rule(Fruits(color="green"))
-    def green_fruits(self, characteristic):
-        if(characteristic == ""):
-            print("The fruit is ...")
-        elif(characteristic == ""):
-            print("The fruit is ...")
-        else:
-            print("I don't know which is your fruit")
+    @Rule(Fruits(color='green'))
+    def green_fruits(self):
+        print("Color verde")
 
     @Rule(Fruits(color='red'))
-    def red_fruits(self, characteristic):
-        if(characteristic == ""):
-            print("The fruit is ...")
-        elif(characteristic == ""):
-            print("The fruit is ...")
-        else:
-            print("I don't know which is your fruit")
+    def red_fruits(self):
+        print("Color rojo")
         
     @Rule(Fruits(color='yellow'))
-    def green_fruits(self, characteristic):
-        if(characteristic == ""):
-            print("The fruit is ...")
-        elif(characteristic == ""):
-            print("The fruit is ...")
-        else:
-            print("I don't know which is your fruit")
+    def yellow_fruits(self):
+        print("Color yellow")
         
     @Rule(Fruits(color='blue'))
-    def green_fruits(self, characteristic):
-        if(characteristic == ""):
-            print("The fruit is ...")
-        elif(characteristic == ""):
-            print("The fruit is ...")
-        else:
-            print("I don't know which is your fruit")
+    def blue_fruits(self):
+        print("Color blue")
 
     @Rule(Fruits(color='purple'))
-    def green_fruits(self, characteristic):
-        if(characteristic == ""):
-            print("The fruit is ...")
-        elif(characteristic == ""):
-            print("The fruit is ...")
-        else:
-            print("I don't know which is your fruit")
+    def purple_fruits(self):
+        print("Print purple")
 
     @Rule(Fruits(color='brown'))
-    def green_fruits(self, characteristic):
-        if(characteristic == ""):
-            print("The fruit is ...")
-        elif(characteristic == ""):
-            print("The fruit is ...")
-        else:
-            print("I don't know which is your fruit")
+    def brown_fruits(self):
+        print("Color brown")
 
     @Rule(Fruits(color='orange'))
-    def green_fruits(self, characteristic):
-        if(characteristic == ""):
-            print("The fruit is ...")
-        elif(characteristic == ""):
-            print("The fruit is ...")
-        else:
-            print("I don't know which is your fruit")
+    def orange_fruits(self):
+        print("Color orange")
 
 def questions():
     name_player = input("What's your name? ")
@@ -94,7 +59,7 @@ def main():
     engine = DivinerRobot()
     engine.reset()
     response = questions()
-    color = response[1].islower()
+    color = response[1].lower()
     engine.declare(Fruits(color=color))
     engine.run()
 
