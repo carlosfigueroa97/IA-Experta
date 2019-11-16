@@ -1,17 +1,18 @@
 from experta import *
 
+bandera = False
 array_colores = ["verde","rojo","amarillo","naranja"]
 
 class Fruits(Fact):
     pass
 
 class DivinerRobot(KnowledgeEngine):
-
     @Rule(Fruits(color='verde',dura=1,suave=2,dulce=2,acido=1,semilla=2,hueso=2,ss_nh=1,agradable=1,desagradable=2))
     def coco(self):
+        global bandera
         print("Es el coco")
         bandera = True
-        self.set_bandera(True)
+        self.set_bandera(bandera)
 
     @Rule(Fruits(color='verde',dura=2,suave=1,dulce=2,acido=1,semilla=1,hueso=2,ss_nh=2,agradable=1,desagradable=2))
     def kiwi(self):
@@ -83,7 +84,7 @@ class DivinerRobot(KnowledgeEngine):
         self.bandera = bandera
 
     def get_bandera(self):
-        return self.bandera
+        return bandera
 
 def preguntas():
     name_player = color = ""
@@ -125,7 +126,6 @@ def main():
             engine.declare(Fruits(color=response[0].lower(),dura=response[1],suave=response[2],dulce=response[3],acido=response[4],semilla=response[5],hueso=response[6],ss_nh=response[7],agradable=response[8],desagradable=response[9]))
             engine.run()
             ban = DivinerRobot().get_bandera()
-            print(ban)
             if(ban == False):
                 print("Una disculpa! No encontre una fruta en mi BD con esas características!")
                 input("¿Que fruta era?")
