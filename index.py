@@ -106,7 +106,7 @@ def preguntas():
             if(hueso == 2):
                 ss_nh = int(input("¿Sin semilla ni hueso? (1=si 2=no)"))
         if(ss_nh == 2 or ss_nh == "" or ss_nh == None):
-            print("No seas hijueputa malparido perro del orto troll!")
+            print("No seas TROLL!")
         else:
             agradable = int(input("Aroma agradable? (1=si 2=no)"))
             if(agradable == 2):
@@ -128,13 +128,16 @@ def main():
             ban = DivinerRobot().get_bandera()
             if(ban == False):
                 print("Una disculpa! No encontre una fruta en mi BD con esas características!")
-                input("¿Que fruta era?")
-                print("Lo anotare en las cosas que me valen verga!")
             else:
-                print("Eres un marrano y me la pelas!")
+                opc = int(input("¿Adivine tu fruta? (1=si / 2=no)"))
+                if(opc == 1):
+                    print("Ja, no me ganas :)")
+                else:
+                    input("¿Que fruta era?")
+                    print("Ohh, la pensaré mejor para la otra!")
         resp = int(input('¿Desea volver a jugar? (1=Si / 2 = no) '))
-        if(not resp):
-            print("Chinga tu madre pues!")
+        if(resp == 2):
+            print("!Adios, espero hayas disfrutado!")
             break
         DivinerRobot().set_bandera(False)
 
