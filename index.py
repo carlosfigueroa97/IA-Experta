@@ -134,7 +134,7 @@ def main():
         else:
             engine = DivinerRobot()
             engine.reset()
-            engine.declare(Fruits(color=response[0].lower(),dbandera = Noneura=response[1],suave=response[2],dulce=response[3],acido=response[4],semilla=response[5],hueso=response[6],ss_nh=response[7],agradable=response[8],desagradable=response[9]))
+            engine.declare(Fruits(color=response[0].lower(),dura=response[1],suave=response[2],dulce=response[3],acido=response[4],semilla=response[5],hueso=response[6],ss_nh=response[7],agradable=response[8],desagradable=response[9]))
             engine.run()
             ban = DivinerRobot().get_bandera()
             if(ban == False):
