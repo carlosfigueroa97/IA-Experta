@@ -3,10 +3,10 @@ from experta import *
 fruits_green = ["kiwi","apple","grapes","lemon","watermelon","avocado","pear","melon","blueberries","mango","coconut"]
 fruits_red = ["strawberry","plum","apple","blackberry","cherry","raspberry","grapes"]
 fruits_yellow = ["banana","platano","pitalla","melon","guayaba"]
-fruits_blue = ["blueberries"]
+fruits_blue = ["blueberries","raisins"]
 fruits_purple = ["blackberry","currants","plum","figs","blueberries"]
 fruits_brown = ["coconut","almond","hazelnut"]
-fruits_orange = ["orange","mango","papaya"]
+fruits_orange = ["orange","mango","papaya","mandarina"]
 
 class Fruits(Fact):
     pass
